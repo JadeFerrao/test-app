@@ -13,9 +13,9 @@ import { Product, RootStackParamList } from '../types';
 import { theme } from '../theme';
 import {
   Container, Centered, LoadingText, ErrorEmoji, ErrorText, BackBtn, BackBtnText,
-  Header, BackButton, BackIcon, BackLabel, HeaderTitle,
+  Header, BackButton, BackIcon, BackLabel, HeaderTitle, HeaderSpacer,
   ScrollContainer, Gallery, DotsRow, Dot, Content, Row,
-  CategoryBadge, CategoryText, RatingBadge, RatingText, ReviewCount,
+  CategoryBadge, CategoryText, RatingBadge, RatingText, ReviewCount, RatingRow,
   Title, PriceRow, Price, OriginalPrice, DiscountBadge, DiscountText,
   SectionLabel, Description, InfoGrid, InfoRowContainer, InfoLabel, InfoValue,
   TagsRow, Tag, TagText, ReviewCard, ReviewHeader, ReviewerName,
@@ -85,7 +85,7 @@ const ProductDetailScreen: React.FC<Props> = ({ route, navigation }) => {
           <BackLabel>Back</BackLabel>
         </BackButton>
         <HeaderTitle numberOfLines={1}>{product.title}</HeaderTitle>
-        <HeaderTitle style={{ width: 60, flex: 0 }} />
+        <HeaderSpacer />
       </Header>
 
       <ScrollContainer
@@ -124,10 +124,12 @@ const ProductDetailScreen: React.FC<Props> = ({ route, navigation }) => {
             <CategoryBadge>
               <CategoryText>{product.category}</CategoryText>
             </CategoryBadge>
-            <RatingBadge>
-              <RatingText>★ {product.rating.toFixed(1)}</RatingText>
-            </RatingBadge>
-            <ReviewCount>({product.reviews.length} reviews)</ReviewCount>
+            <RatingRow>
+              <RatingBadge>
+                <RatingText>★ {product.rating.toFixed(1)}</RatingText>
+              </RatingBadge>
+              <ReviewCount>({product.reviews.length} reviews)</ReviewCount>
+            </RatingRow>
           </Row>
 
           {/* Title */}
@@ -150,6 +152,20 @@ const ProductDetailScreen: React.FC<Props> = ({ route, navigation }) => {
           <SectionLabel>Description</SectionLabel>
           <Description>{product.description}</Description>
 
+          {/* Tags */}
+          {product.tags.length > 0 && (
+            <>
+              <SectionLabel>Tags</SectionLabel>
+              <TagsRow>
+                {product.tags.map((tag) => (
+                  <Tag key={tag}>
+                    <TagText>{tag}</TagText>
+                  </Tag>
+                ))}
+              </TagsRow>
+            </>
+          )}
+
           {/* Product Details */}
           <SectionLabel>Product Details</SectionLabel>
           <InfoGrid>
@@ -164,20 +180,6 @@ const ProductDetailScreen: React.FC<Props> = ({ route, navigation }) => {
               value={`${product.dimensions.width} × ${product.dimensions.height} × ${product.dimensions.depth} cm`}
             />
           </InfoGrid>
-
-          {/* Tags */}
-          {product.tags.length > 0 && (
-            <>
-              <SectionLabel>Tags</SectionLabel>
-              <TagsRow>
-                {product.tags.map((tag) => (
-                  <Tag key={tag}>
-                    <TagText>{tag}</TagText>
-                  </Tag>
-                ))}
-              </TagsRow>
-            </>
-          )}
 
           {/* Policies */}
           <SectionLabel>Policies & Shipping</SectionLabel>

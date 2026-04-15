@@ -29,7 +29,7 @@ export const Header = styled.View`
 export const BackButton = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
-  width: 60px;
+  width: 80px;
 `;
 
 export const BackIcon = styled.Text`
@@ -51,6 +51,10 @@ export const HeaderTitle = styled.Text`
   font-weight: 700;
   color: ${theme.colors.text};
   text-align: center;
+`;
+
+export const HeaderSpacer = styled.View`
+  width: 80px;
 `;
 
 export const ScrollContainer = styled.ScrollView`
@@ -82,9 +86,15 @@ export const Content = styled.View`
 
 export const Row = styled.View`
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  gap: ${theme.spacing.sm}px;
   margin-bottom: ${theme.spacing.sm}px;
+`;
+
+export const RatingRow = styled.View`
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
 `;
 
 export const CategoryBadge = styled.View`
