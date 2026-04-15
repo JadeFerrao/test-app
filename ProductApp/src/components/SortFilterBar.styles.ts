@@ -16,13 +16,13 @@ export const Chip = styled.TouchableOpacity<{ active?: boolean }>`
   padding-vertical: ${theme.spacing.xs + 2}px;
   border-radius: ${theme.borderRadius.full}px;
   border-width: 1px;
-  border-color: ${({ active }) => (active ? theme.colors.primary : theme.colors.border)};
-  background-color: ${({ active }) => (active ? theme.colors.primary : theme.colors.surface)};
+  border-color: ${({ active }: { active?: boolean }) => (active ? theme.colors.primary : theme.colors.border)};
+  background-color: ${({ active }: { active?: boolean }) => (active ? theme.colors.primary : theme.colors.surface)};
 `;
 
 export const ChipText = styled.Text<{ active?: boolean }>`
   font-size: ${theme.fontSize.sm}px;
-  color: ${({ active }) => (active ? '#fff' : theme.colors.text)};
+  color: ${({ active }: { active?: boolean }) => (active ? '#fff' : theme.colors.text)};
   font-weight: 500;
 `;
 
@@ -78,13 +78,13 @@ export const Option = styled.TouchableOpacity<{ active?: boolean }>`
   padding-vertical: ${theme.spacing.md}px;
   border-bottom-width: 1px;
   border-bottom-color: ${theme.colors.border};
-  background-color: ${({ active }) => (active ? '#F5F3FF' : 'transparent')};
-  margin-horizontal: ${({ active }) => (active ? `-${theme.spacing.lg}px` : '0px')};
-  padding-horizontal: ${({ active }) => (active ? `${theme.spacing.lg}px` : '0px')};
+  background-color: ${({ active }: { active?: boolean }) => (active ? '#F5F3FF' : 'transparent')};
+  margin-horizontal: ${({ active }: { active?: boolean }) => (active ? `-${theme.spacing.lg}px` : '0px')};
+  padding-horizontal: ${({ active }: { active?: boolean }) => (active ? `${theme.spacing.lg}px` : '0px')};
 `;
 
 export const OptionText = styled.Text<{ active?: boolean }>`
   font-size: ${theme.fontSize.md}px;
-  color: ${({ active }) => (active ? theme.colors.primary : theme.colors.text)};
-  font-weight: ${({ active }) => (active ? '600' : '400')};
+  color: ${({ active }: { active?: boolean }) => (active ? theme.colors.primary : theme.colors.text)};
+  font-weight: ${({ active }: { active?: boolean }) => (active ? '600' : '400')};
 `;

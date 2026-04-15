@@ -8,9 +8,16 @@ interface LazyImageProps {
   width: number | string;
   height: number | string;
   borderRadius?: number;
+  resizeMode?: 'cover' | 'contain' | 'stretch' | 'repeat' | 'center';
 }
 
-const LazyImage: React.FC<LazyImageProps> = ({ uri, width, height, borderRadius = 0 }) => {
+const LazyImage: React.FC<LazyImageProps> = ({ 
+  uri, 
+  width, 
+  height, 
+  borderRadius = 0,
+  resizeMode = 'cover'
+}) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -30,7 +37,7 @@ const LazyImage: React.FC<LazyImageProps> = ({ uri, width, height, borderRadius 
             setLoading(false);
             setError(true);
           }}
-          resizeMode="cover"
+          resizeMode={resizeMode}
         />
       ) : (
         <ErrorBox>

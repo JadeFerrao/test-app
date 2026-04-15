@@ -86,9 +86,9 @@ export const DiscountText = styled.Text`
 
 export const Chevron = styled.View`
   margin-left: auto;
-  width: 28px;
-  height: 28px;
-  border-radius: 14px;
+  width: 44px;
+  height: 32px;
+  border-radius: ${theme.borderRadius.full}px;
   background-color: ${theme.colors.primary};
   justify-content: center;
   align-items: center;
@@ -98,5 +98,4 @@ export const ChevronText = styled.Text`
   color: #fff;
   font-size: 18px;
   font-weight: 700;
-  line-height: 22px;
 `;

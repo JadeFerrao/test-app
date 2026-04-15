@@ -23,6 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onPress }) => {
         width="100%"
         height={160}
         borderRadius={theme.borderRadius.md}
+        resizeMode="contain"
       />
       <Body>
         <CategoryRow>
