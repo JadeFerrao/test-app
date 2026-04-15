@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Modal, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { theme } from '../theme';
-import { SortOption, Category, FilterState } from '../types';
+import { SortOption, Category, FilterState, ProductSortField } from '../types';
 import {
   Row, Chip, ChipText, ClearChip, ClearChipText, ChipIcon,
   Overlay, Sheet, TallSheet, SheetTitle, Option, OptionText,
 } from './SortFilterBar.styles';
 
-const SORT_OPTIONS: SortOption[] = [
+const SORT_OPTIONS: SortOption<ProductSortField>[] = [
   { label: 'Price: Low to High', value: 'price_asc' },
   { label: 'Price: High to Low', value: 'price_desc' },
   { label: 'Name: A–Z', value: 'name_asc' },

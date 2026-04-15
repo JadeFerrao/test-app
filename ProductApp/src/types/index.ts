@@ -58,17 +58,45 @@ export interface Category {
   url: string;
 }
 
-// Sort & Filter interfaces
-export type SortField = 'price_asc' | 'price_desc' | 'name_asc' | 'name_desc';
+// User types
+export interface User {
+  id: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  username: string;
+  image: string;
+  age: number;
+  gender: string;
+  phone: string;
+  role: string;
+}
 
-export interface SortOption {
+export interface UsersResponse {
+  users: User[];
+  total: number;
+  skip: number;
+  limit: number;
+}
+
+// Sort & Filter interfaces
+export type UserSortField = 'name_asc' | 'name_desc' | 'id_asc' | 'id_desc';
+export type ProductSortField = 'price_asc' | 'price_desc' | 'name_asc' | 'name_desc';
+
+export interface SortOption<T> {
   label: string;
-  value: SortField;
+  value: T;
+}
+
+export interface UserFilterState {
+  lastName: string;
+  emailDomain: string;
+  sort: UserSortField | null;
 }
 
 export interface FilterState {
   search: string;
-  sort: SortField | null;
+  sort: ProductSortField | null;
   category: string | null;
 }
 
@@ -76,4 +104,5 @@ export interface FilterState {
 export type RootStackParamList = {
   ProductList: undefined;
   ProductDetail: { productId: number };
+  UserList: undefined;
 };

@@ -77,6 +77,12 @@ const ProductListScreen: React.FC = () => {
       <StatusBar barStyle="dark-content" backgroundColor={theme.colors.background} />
       <Header>
         <HeaderTitle>Products</HeaderTitle>
+        <Ionicons
+          name="people-circle"
+          size={32}
+          color={theme.colors.primary}
+          onPress={() => navigation.navigate('UserList')}
+        />
       </Header>
       {/* Sticky search + filter block */}
       <StickyHeader>

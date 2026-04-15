@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { fetchProducts, fetchCategories } from '../api/products';
-import { Product, Category, FilterState, SortField } from '../types';
+import { Product, Category, FilterState, ProductSortField } from '../types';
 
 export function useProducts() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -72,7 +72,7 @@ export function useProducts() {
   };
 }
 
-function sortProducts(products: Product[], sort: SortField): Product[] {
+function sortProducts(products: Product[], sort: ProductSortField): Product[] {
   return [...products].sort((a, b) => {
     switch (sort) {
       case 'price_asc':
