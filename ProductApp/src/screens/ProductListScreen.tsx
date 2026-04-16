@@ -84,7 +84,7 @@ const ProductListScreen: React.FC = () => {
           onPress={() => navigation.navigate('UserList')}
         />
       </Header>
-      {/* Sticky search + filter block */}
+      {/* Sticky search and filter block */}
       <StickyHeader>
         <SearchBar
           value={searchInput}

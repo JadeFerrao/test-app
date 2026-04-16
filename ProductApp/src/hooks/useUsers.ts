@@ -16,7 +16,6 @@ export function useUsers() {
     const loadData = async () => {
       try {
         setLoading(true);
-        // We fetch a larger batch to support client-side domain filtering if needed
         const data = await fetchUsers({ limit: 100 });
         setUsers(data.users);
       } catch (err) {

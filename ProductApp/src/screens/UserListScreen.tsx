@@ -76,14 +76,14 @@ const UserListScreen: React.FC = () => {
       <StatusBar barStyle="dark-content" backgroundColor={theme.colors.background} />
       <Header>
         <HeaderTitle>Users</HeaderTitle>
-        <Ionicons 
-          name="close" 
-          size={28} 
-          color={theme.colors.text} 
-          onPress={() => navigation.goBack()} 
+        <Ionicons
+          name="close"
+          size={28}
+          color={theme.colors.text}
+          onPress={() => navigation.goBack()}
         />
       </Header>
-      
+
       <StickyHeader>
         <InputGroup>
           <FilterInput
@@ -97,7 +97,7 @@ const UserListScreen: React.FC = () => {
             onChangeText={(text: string) => updateFilter({ emailDomain: text })}
           />
         </InputGroup>
-        
+
         <SortRow horizontal showsHorizontalScrollIndicator={false}>
           {SORT_OPTIONS.map((opt) => (
             <Chip
@@ -110,7 +110,7 @@ const UserListScreen: React.FC = () => {
             </Chip>
           ))}
         </SortRow>
-        
+
         {users.length > 0 && (
           <ResultCount>{users.length} users found</ResultCount>
         )}

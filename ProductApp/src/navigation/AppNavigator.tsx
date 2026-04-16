@@ -13,10 +13,7 @@ const AppNavigator: React.FC = () => {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="ProductList" component={ProductListScreen} />
-        <Stack.Screen
-          name="ProductDetail"
-          component={ProductDetailScreen}
-        />
+        <Stack.Screen name="ProductDetail" component={ProductDetailScreen} />
         <Stack.Screen name="UserList" component={UserListScreen} />
       </Stack.Navigator>
     </NavigationContainer>
