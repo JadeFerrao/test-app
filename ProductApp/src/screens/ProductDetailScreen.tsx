@@ -202,11 +202,11 @@ const ProductDetailScreen: React.FC<Props> = ({ route, navigation }) => {
                     </ReviewRatingText>
                   </ReviewHeader>
                   <ReviewComment>{review.comment}</ReviewComment>
-                  <ReviewDate>
+                  {/* <ReviewDate>
                     {new Date(review.date).toLocaleDateString('en-US', {
                       year: 'numeric', month: 'short', day: 'numeric',
                     })}
-                  </ReviewDate>
+                  </ReviewDate> */}
                 </ReviewCard>
               ))}
             </>
